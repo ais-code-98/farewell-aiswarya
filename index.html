@@ -1,118 +1,199 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thank You</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      background: #0b0b0b;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: #eaeaea;
-      overflow: hidden;
-    }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Farewell — Aiswarya</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ey-gold:#FFD700;
+  --text:#FFD700;
+  --card-bg:#1a1a1a;
+  --bg:#111;
+  --quote-color:#ccc;
+}
 
-    .container {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+html, body{
+  margin:0;
+  /* font-family: font-family: "Inter", Roboto, Arial, sans-serif; */
+  font-family: "Dancing Script", "Comic Sans MS", cursive;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
 
-    .card {
-      background: #101010;
-      border-radius: 18px;
-      padding: 56px 52px;
-      width: 92%;
-      max-width: 760px;
-      box-shadow: 0 25px 70px rgba(0,0,0,0.65);
-      animation: appear 1.2s ease forwards;
-    }
+/* page wrapper */
+body{
+  display:flex;
+  justify-content:center;
+  padding:48px 16px;
+}
 
-    h1 {
-      font-size: 22px;
-      font-weight: 500;
-      margin-bottom: 34px;
-      color: #f2c94c;
-      text-align: center;
-    }
+/* card container */
+.card-container{
+  width:100%;
+  max-width:700px;
+  perspective:1200px;
+}
 
-    .line {
-      font-size: 15.5px;
-      line-height: 1.75;
-      margin-bottom: 22px;
-      opacity: 0;
-      animation: fade 0.8s ease forwards;
-    }
+/* card */
+.card{
+  background:var(--card-bg);
+  border-radius:14px;
+  padding:42px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.6);
+  transform:rotateX(75deg);
+  transform-origin:top;
+  transition:transform 1.2s ease;
+}
 
-    .line:nth-of-type(1) { animation-delay: 0.3s; }
-    .line:nth-of-type(2) { animation-delay: 0.7s; }
-    .line:nth-of-type(3) { animation-delay: 1.1s; }
-    .line:nth-of-type(4) { animation-delay: 1.5s; }
-    .line:nth-of-type(5) { animation-delay: 1.9s; }
-    .line:nth-of-type(6) { animation-delay: 2.3s; }
+/* open state */
+.card.open{
+  transform:rotateX(0deg);
+}
 
-    .names {
-      color: #cfcfcf;
-      font-size: 14.5px;
-      margin-top: 6px;
-    }
+/* title */
+h1{
+  font-family: 'Great Vibes', cursive;
+  text-align:center;
+  font-size:38px;
+  margin-bottom:28px;
+}
 
-    .sign {
-      margin-top: 30px;
-      font-weight: 500;
-      color: #ffffff;
-    }
+/* text lines */
+.line{
+  font-size:16px;
+  line-height:1.75;
+  margin-bottom:18px;
+  opacity:0;
+  transform:translateY(10px);
+  transition:opacity .8s ease, transform .8s ease;
+  color:#ffffff;
+}
 
-    .quote {
-      margin-top: 10px;
-      font-size: 13.5px;
-      color: #9a9a9a;
-      font-style: italic;
-    }
+.line.show{
+  opacity:1;
+  transform:translateY(0);
+}
 
-    @keyframes appear {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
 
-    @keyframes fade {
-      to { opacity: 1; }
-    }
-  </style>
+/* names */
+.names{
+  font-size:16px;
+  margin-top:6px;
+  font-size:14px;
+  color:#FFD700;
+}
+
+/* footer */
+.signature{
+  font-family: "Dancing Script", "Comic Sans MS", cursive;
+  margin-top:26px;
+  font-weight:600;
+}
+
+.quote{
+  margin-top:10px;
+  font-size:13px;
+  color:var(--quote-color);
+  font-style:italic;
+  font-family: "Dancing Script", "Comic Sans MS", cursive;
+}
+
+/* gold dust */
+.dust{
+  position:fixed;
+  width:6px;
+  height:6px;
+  background:var(--ey-gold);
+  border-radius:50%;
+  pointer-events:none;
+  opacity:.6;
+}
+</style>
 </head>
+
 <body>
 
-  <div class="container">
-    <div class="card">
-      <h1>Thank you</h1>
+<div class="card-container">
+  <div class="card" id="card">
 
-      <div class="line">
-        This place shaped the start of my career in more ways than I can fully capture here.
-      </div>
+    <!-- <h1>I didn’t want this to be a long note — just a sincere one.</h1> -->
 
-      <div class="line">
-        To the leadership — thank you for the trust, direction, and steady support throughout my journey here.
-        <div class="names">@Murshid, @Sambhaji.To my mentors — a huge thank you for your time, patience, and honest guidance! You had a lasting impact on how I approach my work.
-        <div class="names">@Spencer, @Ally, @Steve, @Smriti, @Paritosh</div>
-      </div>
+    <h1>Bid Thee Farewell</h1>
 
-      <div class="line">
-        And to the colleagues I worked with — thank you for the collaboration, help, and everyday learning that made this experience meaningful.
-        <div class="names">Names…</div>
-      </div>
+    <div class="line">
+      Honestly, this still doesn’t feel real! 
+      As I start writing this, so many memories from over six years at EY come to mind. I didn’t want to write a long farewell note, but I did want to share this sincerely.    </div>
 
-      <div class="line">
-        I’m grateful for the journey, the learning, and the people I met along the way. Wishing you all the very best ahead.
-      </div>
-
-      <div class="sign">— Aiswarya</div>
-      <div class="quote">Some places stay with you long after you leave.</div>
+    <div class="line">
+      A huuuuuuge thaaaank youuuu for all the support, guidance, and learning over the years !!
+      This place shaped the start of my career in more ways than I can fully capture here. None of this would have been possible without the incredible people I had the opportunity to work with along the way.
     </div>
+
+
+    <div class="line">
+      To my leaders <span class="names">Murshid and Sambhaji</span> — thank you for the trust, direction, and steady support throughout my journey here.
+    </div>
+
+    <div class="line">
+      To my mentors <span class="names">Spencer, Ally, Steve, Ruifeng, Smriti, Paritosh, Ankur, Brook, Art, Linda, Phil and JP</span> — Always thankful for your time, patience, and honest guidance! Each of you has left a lasting mark on the way I approach my work and think about challenges, far more than you might realize.  
+      
+    </div>
+
+    <div class="line">
+      And to my colleagues/friends — kudos to our quick chats and everyday learning that made this experience meaningful.
+      
+    </div>
+
+    <div class="line">
+      I’m grateful for the journey, the learning, and the people I met along the way.  
+      Wishing you all the very best ahead! 🫶
+    </div>
+
+    <div class="line signature">— Aiswarya</div>
+    <div class="quote">Some places stay with you long after you leave.</div>
+
   </div>
+</div>
+
+<script>
+const card = document.getElementById("card");
+const lines = document.querySelectorAll(".line");
+
+// open card
+setTimeout(() => {
+  card.classList.add("open");
+
+  lines.forEach((line, i) => {
+    setTimeout(() => {
+      line.classList.add("show");
+    }, 600 + i * 1000);
+  });
+
+  createDust(35);
+}, 600);
+
+// gold dust effect
+function createDust(count){
+  for(let i=0;i<count;i++){
+    const d = document.createElement("div");
+    d.className = "dust";
+    d.style.left = Math.random()*100+"vw";
+    d.style.top = Math.random()*100+"vh";
+    document.body.appendChild(d);
+
+    d.animate([
+      { transform:"translateY(0)", opacity:.6 },
+      { transform:"translateY(60vh)", opacity:0 }
+    ],{
+      duration:8000 + Math.random()*4000,
+      iterations:Infinity
+    });
+  }
+}
+</script>
 
 </body>
 </html>
